@@ -14,7 +14,10 @@ pipeline {
 		stage('Zip the app') {
 			steps 
 			{
-				zip zipFile: mydata.zipfile.filename, archive: true, dir: '', glob:''
+				
+				script{
+                    zip archive: true, dir: 'archive', glob: '', zipFile: 'HelloWorldApp.zip'
+                } 
 			}
 		}
 		
