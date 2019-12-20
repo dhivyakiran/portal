@@ -1,6 +1,7 @@
 node 
 		{
-			datas = readYaml file: "sample.yml"
+			config = readYaml file: 'sample.yml'
+			setConfigEnvironmentVariables(config)
 		}
 pipeline {
    agent any
@@ -8,7 +9,7 @@ pipeline {
 		stage('Read YML file') {
 			steps 
 			{
-				echo $test
+				setConfigEnvironmentVariables()
 			}
 		}
 	}
