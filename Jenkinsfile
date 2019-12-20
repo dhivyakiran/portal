@@ -14,7 +14,7 @@ pipeline {
 		stage('Zip the app') {
 			steps 
 			{
-				zip archive: true, dir: '', glob: '', zipFile: 'helloworldapp'
+				zip archive: true, dir: '', glob: '', zipFile: mydata.zipfile.filename
 			}
 		}
 		
