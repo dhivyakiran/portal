@@ -3,8 +3,7 @@ node
 			datas = readYaml file: 'sample.yml'
 		}
 pipeline {
-   agent any
-
+   agent master
 	stages {
 		stage('Read YML file') {
 			steps 
