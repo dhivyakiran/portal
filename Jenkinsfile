@@ -11,10 +11,10 @@ pipeline {
 				echo mydata.message.test
 			}
 		}
-		stage('Npm install') {
+		stage('Zip the app') {
 			steps 
 			{
-				sh 'npm config ls'
+				zip archive: true, dir: '', glob: '', zipFile: 'helloworldapp'
 			}
 		}
 		
