@@ -3,7 +3,7 @@ node {
 }
 pipeline {
    agent any
-	tools {nodejs "node"}
+	
 	stages {
 		stage('Read YML file') {
 			steps 
