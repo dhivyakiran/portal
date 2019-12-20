@@ -7,7 +7,7 @@ pipeline {
 		stage('Read YML file') {
 			steps 
 			{
-				echo "test"
+				echo mydata.message.test
 			}
 		}
 	}
