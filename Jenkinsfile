@@ -9,7 +9,7 @@ pipeline {
 		stage('Read YML file') {
 			steps 
 			{
-				echo ${datas.test}
+				echo $test
 			}
 		}
 	}
