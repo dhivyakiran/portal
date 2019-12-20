@@ -1,2 +1,4 @@
 message:
   test: Hello World
+zipfile:
+    filename: HelloWorldApp
