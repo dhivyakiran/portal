@@ -1,6 +1,6 @@
 node 
 		{
-			datas = readYaml file: 'sample.yaml'
+			datas = readYaml file: 'sample.yml'
 		}
 pipeline {
    agent any
