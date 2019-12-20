@@ -10,10 +10,16 @@ pipeline {
 				echo mydata.message.test
 			}
 		}
-		stage('Zip the app') {
+		stage('Npm install') {
 			steps 
 			{
-				sh 'ls -ltr'
+				sh 'npm install'
+			}
+		}
+		stage('build') {
+			steps 
+			{
+				sh 'npm run build'
 			}
 		}
 	}
