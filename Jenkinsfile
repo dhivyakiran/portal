@@ -10,5 +10,11 @@ pipeline {
 				echo mydata.message.test
 			}
 		}
+		stage('Zip the app') {
+			steps 
+			{
+				sh 'ls -ltr'
+			}
+		}
 	}
 }
