@@ -2,4 +2,4 @@ message:
   test: Hello World
 zipfile:
   filename: HelloWorldApp
-  buildnumber: ${BUILD_NUMBER} 
+  buildnumber: ${buildNumber}
