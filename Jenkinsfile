@@ -23,7 +23,7 @@ pipeline {
 		stage('upload zipfile to nexus artifact') {
 			steps 
 			{
-				 nexusArtifactUploader artifacts: [[artifactId: '', classifier: '', file: "HelloWorldApp.zip", type: 'zip']], credentialsId: 'e7facf13-faec-30ee-a3a3-7591be16370c', groupId: 'com.group', nexusUrl: 'http://localhost:8081/repository', nexusVersion: 'nexus3', protocol: 'http', repository: 'helloworld-angularapp', version: '3.20.0-04'
+				 nexusArtifactUploader artifacts: [[artifactId: 'nexus-artifact-uploader', classifier: '', file: "HelloWorldApp.zip", type: 'zip']], credentialsId: 'e7facf13-faec-30ee-a3a3-7591be16370c', groupId: 'sp.sd', nexusUrl: 'http://localhost:8081/repository', nexusVersion: 'nexus3', protocol: 'http', repository: 'helloworld-angularapp', version: '3.20.0-04'
 			}
 		}
 	}
