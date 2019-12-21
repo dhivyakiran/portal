@@ -9,7 +9,7 @@ pipeline {
 			steps 
 			{
 				script {
-                     			echo currentBuild.number
+                     			echo "current build number: ${currentBuild.number}"
                   
                 }
 			}
