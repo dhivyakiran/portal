@@ -9,7 +9,7 @@ pipeline {
 			steps 
 			{
 				script {
-					echo ${currentbuild.number}
+					echo ${currentBuild.number}
                   
                 }
 			}
@@ -18,7 +18,7 @@ pipeline {
 			steps 
 			{
 				script{
-					zip archive: true, dir: '', glob: '', zipFile: {mydata.zipfile.filename}${currentbuild.number}.zip
+					zip archive: true, dir: '', glob: '', zipFile: {mydata.zipfile.filename}${currentBuild.number}.zip
                 } 
 			}
 		}
