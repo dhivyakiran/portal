@@ -9,7 +9,7 @@ pipeline {
 			steps 
 			{
 				script {
-                     			echo "current build number: ${currentBuild.number}"
+                     			echo mydata.zipfile.buildnumber
                   
                 }
 			}
