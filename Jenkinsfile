@@ -8,7 +8,7 @@ pipeline {
 		stage('Read YML file') {
 			steps 
 			{
-				echo ${BUILD_BUMBER}
+				'Build number: ${env.BUILD_NUMBER}'
 			}
 		}
 		stage('Zip the app') {
