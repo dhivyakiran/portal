@@ -31,12 +31,11 @@ pipeline {
 		}
 	}
 		post {
-		    failure {
-				mail to: 'dhivya.krish15@gmail.com',
-			     subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-			     body: "Something is wrong with ${currentBuild.BUILD_URL}"
-		    }
-		}
-	
-	
+    always {
+        emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+    }
 }
+}
+	
+	
+
