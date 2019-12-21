@@ -18,7 +18,7 @@ pipeline {
 			steps 
 			{
 				script{
-					zip archive: true, dir: '', glob: '', zipFile: "helloWorldApp_${currentBuild.number}.zip"
+					zip archive: true, dir: '', glob: '', zipFile: mydata.zipfile.filename"${currentBuild.number}.zip"
                 } 
 			}
 		}
