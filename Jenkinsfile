@@ -8,7 +8,7 @@ pipeline {
 		stage('Read YML file') {
 			steps 
 			{
-				echo $BUILD_BUMBER
+				echo ${BUILD_BUMBER}
 			}
 		}
 		stage('Zip the app') {
