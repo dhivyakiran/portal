@@ -8,7 +8,7 @@ pipeline {
 		stage('Read YML file') {
 			steps 
 			{
-				echo mydata.message.test
+				echo mydata.zipfile.buildnumber
 			}
 		}
 		stage('Zip the app') {
