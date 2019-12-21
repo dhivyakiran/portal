@@ -15,7 +15,7 @@ pipeline {
 			steps 
 			{
 				script{
-                    zip archive: true, dir: '', glob: '', zipFile: 'HelloWorldApp'+${BUILD_NUMBER}+'.zip'
+                    zip archive: true, dir: '', glob: '', zipFile: 'HelloWorldApp.zip'
                 } 
 			}
 		}
@@ -23,7 +23,7 @@ pipeline {
 		stage('upload zipfile to nexus artifact') {
 			steps 
 			{
-				 nexusArtifactUploader artifacts: [[artifactId: '', classifier: '', file: "HelloWorldApp.zip", type: 'zip']], credentialsId: 'admin', groupId: 'com.group', nexusUrl: 'http://localhost:8081/repository/', nexusVersion: '3.20.0-04', protocol: 'https', repository: 'helloworld-angularapp', version: '1.0.0'
+				 nexusArtifactUploader artifacts: [[artifactId: '', classifier: '', file: "HelloWorldApp.zip", type: 'zip']], credentialsId: 'e7facf13-faec-30ee-a3a3-7591be16370c', groupId: 'com.group', nexusUrl: 'http://localhost:8081/repository', nexusVersion: 'nexus3', protocol: 'http', repository: 'helloworld-angularapp', version: '3.20.0-04'
 			}
 		}
 	}
