@@ -9,7 +9,7 @@ pipeline {
 			steps 
 			{
 				script {
-                     			echo mydata.zipfile.buildnumber
+                     			echo mydata.message.test
                   
                 }
 			}
@@ -18,7 +18,7 @@ pipeline {
 			steps 
 			{
 				script{
-                    zip archive: true, dir: '', glob: '', zipFile: 'HelloWorldApp'+${currentBuild.number}+'.zip'
+                    zip archive: true, dir: '', glob: '', zipFile: 'mydata.zipfile.${currentBuild.number}.zip'
                 } 
 			}
 		}
