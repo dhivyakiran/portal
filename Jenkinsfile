@@ -8,7 +8,6 @@ pipeline {
 		stage('Read YML file') {
 			steps 
 			{
-				echo mydata.message.test
 				echo $BUILD_BUMBER
 			}
 		}
