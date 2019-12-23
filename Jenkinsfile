@@ -48,6 +48,7 @@ pipeline {
 	  }
 	post {
     always {
+	    mail.smtp.starttls.enable=true
        mail to: 'dhivya.krish15@gmail.com',
           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
           body: "${currentBuild.result}"
