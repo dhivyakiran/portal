@@ -1,5 +1,5 @@
 node {
-     mydata = readYaml file: "sample.yml"
+     mydatas = readYaml file: "sample.yml"
 }
 pipeline {
 	agent
@@ -18,7 +18,7 @@ pipeline {
 		{
 	          script 
 		    {
-			echo mydata.message.test
+			echo mydatas.message.test
                      }
 	         }
 		}
@@ -35,7 +35,7 @@ pipeline {
 		{
 	            script
 		      {
-			zip archive: true, dir: './src', glob: '', zipFile: mydata.zipfile.filename+"_${currentBuild.number}.zip"
+			zip archive: true, dir: './src', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                       } 
 		}
              }
