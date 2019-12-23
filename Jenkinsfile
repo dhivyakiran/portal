@@ -2,7 +2,7 @@ node {
      mydata = readYaml file: "sample.yml"
 }
 pipeline {
-	agent slave1
+	agent any
       	
      	stages 
 	{
