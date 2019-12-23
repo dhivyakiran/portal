@@ -2,7 +2,6 @@ message:
   test: Hello World
 zipfile:
   filename: HelloWorldApp
-agentdetails:
-  agentname: slave1
+
   
 
