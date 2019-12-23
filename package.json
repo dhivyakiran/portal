@@ -1,32 +1,10 @@
-  {
-    "name": "my_package",
-    "description": "",
-    "version": "1.0.0",
-    "main": "app.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "devDependencies": {
-    "concurrently": "^3.2.0",
-    "lite-server": "^2.2.2",
-    "typescript": "~2.1.0",
-
-    "canonical-path": "0.0.2",
-    "tslint": "^3.15.1",
-    "lodash": "^4.16.4",
-    "jasmine-core": "~2.4.1",
-    "protractor": "~4.0.14",
-    "rimraf": "^2.5.4",
-
-    "@types/node": "^6.0.46",
-    "@types/jasmine": "2.5.36"
-  },
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/dhivyakiran/helloworld-angular.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "homepage": "https://github.com/dhivyakiran/helloworld-angular"
+{
+  "name": "learning-angularjs",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "karma": "0.10.2",
+    "karma-firefox-launcher": "0.1.0",
+    "karma-jasmine": "0.1.3"
   }
+}
