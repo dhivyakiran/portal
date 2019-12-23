@@ -2,13 +2,8 @@ node {
      mydata = readYaml file: "sample.yml"
 }
 pipeline {
-	agent
-      	{
-          node
-             {
-                label mydata.agentdetails.agentname
-             }
-      	}
+	agent slave1
+      	
      	stages 
 	{
 	   stage('Read YML file') {
