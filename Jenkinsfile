@@ -25,11 +25,8 @@ pipeline {
 	    stage('Download Dependencies')
                {
                    steps {
-			   script
-		      {
-                       sh 'npm install'
+			 sh 'npm install'
 		      }
-                    }
                 }
 
 	    stage('Zip the app')
