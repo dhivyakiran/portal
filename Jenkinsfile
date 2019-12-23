@@ -18,7 +18,7 @@ pipeline {
 		{
 	          script 
 		    {
-			  //mydatas = readYaml (file: 'sample.yml')
+			  
 			    echo mydatas.message.test
 			
                      }
