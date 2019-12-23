@@ -47,12 +47,11 @@ pipeline {
 		
 	  }
 	post {
-    always {
-	    mail.smtp.starttls.enable=true
-       mail to: 'dhivya.krish15@gmail.com',
-          subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
-          body: "${currentBuild.result}"
-    }
+    always  always {
+
+                               emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+
+                                 }
   }
 }
 	
