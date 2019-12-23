@@ -19,7 +19,7 @@ pipeline {
 	          script 
 		    {
 			  //mydatas = readYaml (file: 'sample.yml')
-			    echo mydatas.message.text
+			    echo mydatas.message.test
 			
                      }
 			
