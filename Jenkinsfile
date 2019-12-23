@@ -7,7 +7,10 @@ pipeline {
                             }
                 }
 
-      	
+      	tools {
+  nodejs 'NodeJS'
+}
+
      	stages 
 	{
 	   stage('Read YML file') {
@@ -25,7 +28,9 @@ pipeline {
 	    stage('Download Dependencies')
                {
                    steps {
-			 sh 'npm install'
+			 nodejs('NodeJS') {
+    npm install
+}
 		      }
                 }
 
