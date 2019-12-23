@@ -1,6 +1,3 @@
-node {
-     mydatas = readYaml file: "sample.yml"
-}
 pipeline {
 	agent
                 {
@@ -18,8 +15,10 @@ pipeline {
 		{
 	          script 
 		    {
-			echo mydatas.message.test
+			  mydatas = readYaml (file: 'sample.yml')
+			
                      }
+			echo mydatas.message.test
 	         }
 		}
 	    stage('Download Dependencies')
