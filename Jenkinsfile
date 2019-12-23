@@ -1,3 +1,7 @@
+node {
+     mydatas = readYaml file: "sample.yml"
+}
+
 pipeline {
 	agent
                 {
@@ -15,7 +19,7 @@ pipeline {
 	          script 
 		    {
 			  //mydatas = readYaml (file: 'sample.yml')
-			    echo "*****************testing*****************"
+			    echo mydatas.message.text
 			
                      }
 			
