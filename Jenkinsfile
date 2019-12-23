@@ -7,7 +7,7 @@ pipeline {
                 {
                     node
                             {
-                                label "master"
+                                label "slave1"
                             }
                 }
 
