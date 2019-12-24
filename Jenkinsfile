@@ -6,7 +6,7 @@ pipeline {
 	agent
                 {
                     
-		label datas.agentdetail.agentname
+		label 'master'
                             
                 }
 
