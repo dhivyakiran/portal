@@ -4,8 +4,8 @@ message:
   test: Hello World
 zipfile:
   filename: HelloWorldApp
-pipeline:
-  steps: Deploy
+pipeline: Deploy
+ 
 
   
 
