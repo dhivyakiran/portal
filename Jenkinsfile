@@ -40,7 +40,7 @@ pipeline {
 		}
 	    stage('Download Dependencies')
                {
-		when {expression{mydatas.pipeline.steps != "Deploy" }}
+		when {expression{mydatas.pipeline != "Deploy" }}
 		 steps {
 			nodejs(nodeJSInstallationName: 'NodeJS')
 			 {
@@ -51,7 +51,7 @@ pipeline {
 
 	    stage('Zip the app')
 	    {
-		when {expression{mydatas.pipeline.steps != "Deploy" }}    
+		when {expression{mydatas.pipeline != "Deploy" }}    
 		steps 
 		{
 	            script
@@ -63,18 +63,13 @@ pipeline {
 		
 	  }
 	post {
-	  success {
+	  always {
 		  mail to: 'dhivya.k@cognizant.com',
-		  subject: "Success pipeline: ${currentBuild.fullDisplayName}",
+		  subject: "${currentBuild.result} pipeline: ${currentBuild.fullDisplayName}",
 		  body: "${currentBuild.absoluteUrl} has result ${currentBuild.result}"
 
 	        }
-	  failure {
-	     	mail to: 'dhivya.krish15@gmail.com',
-		subject: "Failure pipeline: ${currentBuild.fullDisplayName}",
-		body: "${currentBuild.absoluteUrl} has result ${currentBuild.result}"
-
-                }
+	  
   }
 }
 	
