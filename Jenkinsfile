@@ -1,13 +1,18 @@
 node {
-     stage('Read YML file from another repository') {
+     
+     	stages 
+	{
+	stage('Read YML file from another repository') {
 	      steps 
 		{
 	          script 
 		    {
+		 	    
 	mydatas = readYaml file: "sample.yml"
 		    }
 		}
      }
+	}
 }
 
 pipeline {
