@@ -5,7 +5,7 @@ message:
 zipfile:
   filename: HelloWorldApp
 pipeline:
-  steps: Build and Deploy
+  steps: Deploy
 
   
 
