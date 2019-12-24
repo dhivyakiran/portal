@@ -1,5 +1,5 @@
 node {
-	git url: 'https://github.com/dhivyakiran/helloworld-angular.git'
+	
 	mydatas = readYaml file: "sample.yml"
 }
 
