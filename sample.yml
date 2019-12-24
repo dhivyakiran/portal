@@ -3,7 +3,7 @@ agentdetail:
 message:
   test: Hello World
 zipfile:
-  name: HelloWorldApp
+  filename: HelloWorldApp
 pipeline:
   steps: Build and Deploy
 
