@@ -1,4 +1,4 @@
-agent:
+agents:
   name: slave1
 message:
   test: Hello World
