@@ -1,18 +1,6 @@
 node {
-     
-     	stages 
-	{
-	stage('Read YML file from another repository') {
-	      steps 
-		{
-	          script 
-		    {
-		 	    
+	git url: 'https://github.com/dhivyakiran/helloworld-angular.git'
 	mydatas = readYaml file: "sample.yml"
-		    }
-		}
-     }
-	}
 }
 
 pipeline {
