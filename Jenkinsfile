@@ -18,7 +18,7 @@ pipeline {
 		{
 	          script 
 		    {
-			  git url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
+			  git url: 'https://github.com/dhivyakiran/angular-yml.git'
 			  testdatas = readYaml file: "test.yml"
 			  echo testdatas.test.message
 			
