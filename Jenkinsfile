@@ -40,7 +40,8 @@ pipeline {
 		}
 	    stage('Download Dependencies')
                {
-		when {expression{mydatas.pipeline.steps == "Build and Deploy" }}
+		when {expression{mydatas.pipeline.steps != "Deploy" }}
+		//when{expression{ (mydatas.pipeline.steps == "Build and Deploy") || (mydatas.pipeline.steps == "Build") }}
 		 steps {
 			   nodejs(nodeJSInstallationName: 'NodeJS'){
     			sh 'npm install'
@@ -50,6 +51,7 @@ pipeline {
 
 	    stage('Zip the app')
 	    {
+		when {expression{mydatas.pipeline.steps != "Deploy" }}    
 		steps 
 		{
 	            script
