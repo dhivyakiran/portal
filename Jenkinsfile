@@ -7,7 +7,7 @@ pipeline {
                 {
                     node
                             {
-                                label "master"
+                                label "slave1"
                             }
                 }
 
@@ -47,7 +47,7 @@ pipeline {
 		
 	  }
 	post {
-    always  always {
+		always {
 
                                emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
 
