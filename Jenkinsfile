@@ -19,7 +19,7 @@ pipeline {
 	          script 
 		    {
 			  
-			    echo mydatas.message.test
+			    echo "Build url:${currentBuild.absoluteUrl}"
 			
                      }
 			
@@ -40,18 +40,23 @@ pipeline {
 		{
 	            script
 		      {
-			zip archive: true, dir: './src', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+			zip archive: true, dir: './src', glob: '', zipFile: mydatas.zipfile.name+"_${currentBuild.number}.zip"
                       } 
 		}
              }
 		
 	  }
 	post {
-		always {
+	  SUCCESS {
 
-                               emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+	     emailext body: 'Successfully build and deploy', "Build url:${currentBuild.absoluteUrl}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Success'
 
-                                 }
+                  }
+	  FAILURE {
+
+	     emailext body: 'Build and Deploy Failed', "Build url:${currentBuild.absoluteUrl}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Failure'
+
+                }
   }
 }
 	
