@@ -1,6 +1,6 @@
 node {
      mydatas = readYaml file: "sample.yml"
-     
+
 }
 
 pipeline {
@@ -18,7 +18,7 @@ pipeline {
 		{
 	          script 
 		    {
-			  include: https://github.com/dhivyakiran/angular-yml.git/test.yml
+			  git url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
 			  testdatas = readYaml file: "test.yml"
 			  echo testdatas.test.message
 			
