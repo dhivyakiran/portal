@@ -7,7 +7,7 @@ pipeline {
                 {
                     node
                             {
-                                label mydatas.agents.name
+                                label mydatas.agentdetail.agentname
                             }
                 }
 
@@ -40,7 +40,7 @@ pipeline {
 		{
 	            script
 		      {
-			zip archive: true, dir: './src', glob: '', zipFile: mydatas.zipfile.name+"_${currentBuild.number}.zip"
+			zip archive: true, dir: './src', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                       } 
 		}
              }
