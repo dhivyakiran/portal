@@ -1,5 +1,6 @@
 node {
      mydatas = readYaml file: "sample.yml"
+     
 }
 
 pipeline {
@@ -12,6 +13,19 @@ pipeline {
 
      	stages 
 	{
+	stage('Read YML file from another repository') {
+	      steps 
+		{
+	          script 
+		    {
+			  include: https://github.com/dhivyakiran/angular-yml.git/test.yml
+			  testdatas = readYaml file: "test.yml"
+			  echo testdatas.test.message
+			
+                     }
+			
+	         }
+		}	
 	   stage('Read YML file') {
 	      steps 
 		{
