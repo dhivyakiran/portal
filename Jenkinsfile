@@ -40,7 +40,8 @@ pipeline {
 		}
 	    stage('Download Dependencies')
                {
-                   steps {
+		when {expression{mydatas.pipeline.steps == "Build and Deploy" }}
+		 steps {
 			   nodejs(nodeJSInstallationName: 'NodeJS'){
     			sh 'npm install'
 }
