@@ -47,12 +47,12 @@ pipeline {
 		
 	  }
 	post {
-	  SUCCESS {
+	  success {
 
 	     emailext body: 'Successfully build and deploy', "Build url:${currentBuild.absoluteUrl}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Success'
 
                   }
-	  FAILURE {
+	  failure {
 
 	     emailext body: 'Build and Deploy Failed', "Build url:${currentBuild.absoluteUrl}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Failure'
 
