@@ -48,13 +48,16 @@ pipeline {
 	  }
 	post {
 	  success {
+		  mail to: 'dhivya.k@cognizant.com',
+          subject: "Success pipeline: ${currentBuild.fullDisplayName}",
+          body: "${currentBuild.absoluteUrl} has result ${currentBuild.result}"
 
-	     emailext body: 'Successfully build and deploy', "Build url:${currentBuild.absoluteUrl}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Success'
-
-                  }
+	        }
 	  failure {
 
-	     emailext body: 'Build and Deploy Failed', "Build url:${currentBuild.absoluteUrl}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Failure'
+	     mail to: 'dhivya.krish15@gmail.com',
+          subject: "Failure pipeline: ${currentBuild.fullDisplayName}",
+          body: "${currentBuild.absoluteUrl} has result ${currentBuild.result}"
 
                 }
   }
