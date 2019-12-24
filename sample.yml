@@ -1,5 +1,5 @@
-message:
-  test: Hello World
+agent:
+  name: slave1
 zipfile:
   filename: HelloWorldApp
 
