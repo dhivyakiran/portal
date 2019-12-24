@@ -1,5 +1,5 @@
-agents:
-  name: slave1
+agentdetail:
+  agentname: slave1
 message:
   test: Hello World
 zipfile:
