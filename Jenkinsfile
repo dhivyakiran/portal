@@ -5,10 +5,9 @@ node {
 pipeline {
 	agent
                 {
-                    node
-                            {
-				    label "${mydatas.agentdetail.agentname}"
-                            }
+                    
+		label "${datas.agentdetail.agentname}"
+                            
                 }
 
      	stages 
