@@ -35,7 +35,7 @@ pipeline
 		}
 	    stage('Download Dependencies')
         {
-			when {expression{mydatas.pipeline != "Deploy" }}
+			when {expression{mydatas.pipeline == "Deploy" }}
 			steps 
 			{
 				nodejs(nodeJSInstallationName: 'NodeJS')
