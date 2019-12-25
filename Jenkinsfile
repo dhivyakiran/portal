@@ -55,7 +55,7 @@ pipeline
 			}
         }
 	}
-	post 
+	/*post 
 	{
 		always 
 		{
@@ -63,6 +63,6 @@ pipeline
 			subject: "${currentBuild.result} pipeline: ${currentBuild.fullDisplayName}",
 			body: "${currentBuild.absoluteUrl} has result ${currentBuild.result}"
 	    }
-	}
+	}*/
 }
 
