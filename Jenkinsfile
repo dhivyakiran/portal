@@ -40,7 +40,7 @@ pipeline
 			{
 				nodejs(nodeJSInstallationName: 'NodeJS')
 				{
-					npm publish --registry http://localhost:8081/repository/npm-internal/
+					sh 'npm install'
 				}
 		    }
         }
