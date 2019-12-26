@@ -35,13 +35,13 @@ pipeline
 		}
 	    stage('Download Dependencies')
         {
-			when {expression{mydatas.pipeline != "Deploy" }}
+			when {expression{mydatas.pipeline == "Deploy" }}
 			steps 
 			{
-				//nodejs(nodeJSInstallationName: 'NodeJS')
-				//{
+				nodejs(nodeJSInstallationName: 'NodeJS')
+				{
 					sh 'npm install'
-				//}
+				}
 		    }
         }
 	    stage('Zip the app')
