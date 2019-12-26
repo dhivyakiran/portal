@@ -55,6 +55,13 @@ pipeline
                 } 
 			}
         }
+		stage('upload zipfile to nexus artifact') 
+		{
+            steps
+            {
+				nexusArtifactUploader artifacts: [[artifactId: 'HelloWorldApp', classifier: '', file: "HelloWorldApp_${currentBuild.number}.zip", type: 'zip']], credentialsId: 'b540a6d8-00dc-4524-af49-8d99d20d3919', groupId: 'sp.sd', nexusUrl: 'localhost:8081', nexusVersion: '3.20.0-04', protocol: 'http', repository: 'helloworld-angular', version: '1.0.0'
+            }
+        }
 	}
 	/*post 
 	{
