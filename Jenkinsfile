@@ -35,12 +35,12 @@ pipeline
 		}
 	    stage('Download Dependencies')
         {
-			when {expression{mydatas.pipeline == "Deploy" }}
+			when {expression{mydatas.pipeline != "Deploy" }}
 			steps 
 			{
 				nodejs(nodeJSInstallationName: 'NodeJS')
 				{
-					sh 'npm install'
+					npm publish --registry http://localhost:8081/repository/npm-internal/
 				}
 		    }
         }
