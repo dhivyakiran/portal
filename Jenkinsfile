@@ -54,6 +54,17 @@ zip archive: true, dir: './src', glob: '', zipFile: mydatas.zipfile.filename+"_$
                 } 
 }
         }
+     stage('UnZip the app')
+   {
+when {expression{mydatas.pipeline != "Deploy" }}    
+steps 
+{
+script
+{
+unzip archive: true, dir: '', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+                } 
+}
+        }
 }
 post 
 {
