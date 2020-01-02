@@ -32,6 +32,13 @@ script
    }
 }
 }
+ stage('Display changesets')
+    {
+        steps 
+        {
+        echo "${currentBuild.changeSets}"
+        }
+    }
    stage('Download Dependencies')
         {
 when {expression{mydatas.pipeline != "Deploy" }}
@@ -43,7 +50,7 @@ sh 'npm install'
 }
    }
         }
-   stage('Zip the app')
+  /* stage('Zip the app')
    {
 when {expression{mydatas.pipeline != "Deploy" }}    
 steps 
@@ -64,7 +71,7 @@ script
 unzip dir: '', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                 } 
 }
-        }
+        }*/
 }
 /*post 
 {
