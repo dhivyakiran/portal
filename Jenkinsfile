@@ -61,12 +61,12 @@ steps
 {
 script
 {
-unzip archive: true, dir: '', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+unzip archive: true, dir: '/opt/jenkins/workspace/sample-angularjs/', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                 } 
 }
         }
 }
-post 
+/*post 
 {
 always 
 {
@@ -74,5 +74,5 @@ mail to: 'dhivya.k@cognizant.com',
 subject: "${currentBuild.result} pipeline: ${currentBuild.fullDisplayName}",
 body: "${currentBuild.absoluteUrl} has result ${currentBuild.result}"
    }
-}
+}*/
 }
