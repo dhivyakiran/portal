@@ -61,7 +61,7 @@ steps
 {
 script
 {
-unzip archive: true, dir: '/opt/jenkins/workspace/sample-angularjs/', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+unzip dir: '', glob: '', read: true, zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                 } 
 }
         }
