@@ -32,7 +32,7 @@ script
    }
 }
 }
- stage("Display changeset?") {
+ stage('Display changeset') {
       steps {
         script {
            def changeLogSets = currentBuild.changeSets
@@ -46,9 +46,12 @@ script
                    def file = files[k]
                    echo " ${file.editType.name} ${file.path}"
                }
+           }
+           }
+               }
             }
            }
-        }
+        
 
    stage('Download Dependencies')
         {
