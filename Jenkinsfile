@@ -61,7 +61,7 @@ steps
 {
 script
 {
-unzip dir: '', glob: '', read: true, zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+unzip dir: '', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                 } 
 }
         }
