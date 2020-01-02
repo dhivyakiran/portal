@@ -64,7 +64,7 @@ sh 'npm install'
 }
    }
         }
-  /* stage('Zip the app')
+  stage('Zip the app')
    {
 when {expression{mydatas.pipeline != "Deploy" }}    
 steps 
@@ -82,10 +82,10 @@ steps
 {
 script
 {
-unzip dir: '', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+unzip dir: '.', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                 } 
 }
-        }*/
+        }
 }
 /*post 
 {
