@@ -5,7 +5,7 @@ message:
 zipfile:
   filename: HelloWorldApp
 pipeline: Build
- 
+sample: testmsg
 
   
 
