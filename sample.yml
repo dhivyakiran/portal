@@ -1,9 +1,9 @@
 agentdetail:
   agentname: master
 artifact: 
-  - salesportal
-  - agentportal
-  - memberportal
+  - sales
+  - agent
+  - member
 zipfile:
   salesname: salesportal
   agentname: agentportal
