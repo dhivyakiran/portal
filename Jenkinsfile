@@ -65,12 +65,13 @@ sh 'npm install'
 }
    }
         }
-  stage('Zip the app')
+  
+  stage('Zip the sales app')
    {
     
     steps 
     {
-        when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.sales=="sales")}}    
+       when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.sales=="sales")}}    
       script
     {
         zip archive: true, dir: mydatas.artifact.sales, zipFile: "salesportal/"+mydatas.artifact.sales+"_${currentBuild.number}.zip"
