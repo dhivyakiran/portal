@@ -56,7 +56,7 @@ script
 
    stage('Download Dependencies')
         {
-when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales")}}
+when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales, agent")}}
 steps 
 {
 nodejs(nodeJSInstallationName: 'NodeJS')
@@ -67,7 +67,7 @@ sh 'npm install'
         }
   stage('Zip the app')
    {
-when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales")}}    
+when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales, agent")}}    
 steps 
 {
 script
