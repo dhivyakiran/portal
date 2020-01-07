@@ -2,8 +2,8 @@ agentdetail:
   agentname: master
 artifact: sales
 zipfile:
-  filename: ./$artifact/HelloWorldApp
-  directory: $artifact
+  filename: HelloWorldApp
+  directory: ./$artifact
 pipeline: Build
 giturl:
  url1: https://github.com/dhivyakiran/angular-yml.git
