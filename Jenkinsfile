@@ -68,10 +68,10 @@ sh 'npm install'
   
   stage('Zip the sales app')
    {
-    
+     when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.sales=="sales")}}    
     steps 
     {
-       when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.sales=="sales")}}    
+      
       script
     {
         zip archive: true, dir: mydatas.artifact.sales, zipFile: "salesportal/"+mydatas.artifact.sales+"_${currentBuild.number}.zip"
@@ -81,10 +81,10 @@ sh 'npm install'
    }
    stage('Zip the agent app')
    {
-    
+     when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.agent=="agent")}}    
     steps 
     { 
-    when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.agent=="agent")}}    
+   
       script
     {
         zip archive: true, dir: mydatas.artifact.agent, zipFile: "agentportal/"+mydatas.artifact.agent+"_${currentBuild.number}.zip"
@@ -94,10 +94,10 @@ sh 'npm install'
    }
 stage('Zip the members app')
    {
-    
+     when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.members=="members")}}    
     steps 
     {
-    when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.members=="members")}}    
+   
       script
     {
 
