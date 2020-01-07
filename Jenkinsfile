@@ -6,7 +6,7 @@ pipeline
 {
 agent
 {
-    label "${mydatas.agentdetail.agentname}"
+    label 'master'
     }
     stages 
 {
