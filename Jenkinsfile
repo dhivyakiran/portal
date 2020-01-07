@@ -75,7 +75,7 @@ script
 {
     sh 'mkdir salesportal'
     
- zip archive: true, dir: mydatas.artifact[0], zipFile: mydatas.zipfile.agentname+"/"+mydatas.artifact[0]+"_${currentBuild.number}.zip"
+ zip archive: true, dir: mydatas.artifact[0], zipFile: "salesportal/"+mydatas.artifact[0]+"_${currentBuild.number}.zip"
   } 
 }
         }
