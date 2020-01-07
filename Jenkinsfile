@@ -34,7 +34,7 @@ stage('Download Dependencies')
 }
 stage('Zip the sales app')
    {
-     when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.sales=="sales")}}    
+     when {expression{(mydatas.pipeline != "Deploy")}}    
     steps 
     {
      script
@@ -43,6 +43,7 @@ stage('Zip the sales app')
        for (int i = 0; i < artifact; i++) 
        {
        zip archive: true, dir: mydatas.artifact[i], zipFile: mydatas.artifact[i]+"/"+"${currentBuild.number}/"+mydatas.artifact[i]+"_${currentBuild.number}.zip" 
+       
        }
       } 
     }
