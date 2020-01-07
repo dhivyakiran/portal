@@ -3,7 +3,7 @@ agentdetail:
 zipfile:
   filename: HelloWorldApp
 pipeline: Build
-artifact: Sales
+artifact: sales
 giturl:
  url1: https://github.com/dhivyakiran/angular-yml.git
 nexus:
