@@ -5,7 +5,6 @@ artifact:
   - agent
   - members
 zipfile:
-  filename: HelloWorldApp
   salesname: salesportal
   agentname: agentportal
   membername: memberportal
