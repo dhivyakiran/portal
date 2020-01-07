@@ -1,6 +1,7 @@
 node 
 {
-mydatas = readYaml file: "sample.yml"
+    git url: 'https://github.com/dhivyakiran/helloworld-angular.git'
+    mydatas = readYaml file: "sample.yml"
 }
 pipeline 
 {
