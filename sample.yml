@@ -1,6 +1,6 @@
 agentdetail:
   agentname: master
-artifact: sales
+artifact: sales, agent
 zipfile:
   filename: HelloWorldApp
 pipeline: Build
