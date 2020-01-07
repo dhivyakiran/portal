@@ -72,7 +72,7 @@ steps
 {
 script
 {
-zip archive: true, dir: mydatas.artifact, glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+zip archive: true, glob: 'agent/**/*.*, zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                 } 
 }
         }
