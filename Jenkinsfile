@@ -10,7 +10,7 @@ agent
     }
     stages 
 {
-stage('Read YML file from another repository') 
+/*stage('Read YML file from another repository') 
 {
 steps 
 {
@@ -21,7 +21,7 @@ testdatas = readYaml file: "test.yml"
 echo testdatas.test.message
    }
 }
-} 
+}*/ 
 stage('Read YML file from current repository') 
 {
 steps 
