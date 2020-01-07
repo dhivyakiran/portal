@@ -2,7 +2,7 @@ agentdetail:
   agentname: master
 artifact: sales
 zipfile:
-  filename: HelloWorldApp
+  filename: $artifact/HelloWorldApp
   directory: $artifact
 pipeline: Build
 giturl:
