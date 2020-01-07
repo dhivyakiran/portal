@@ -75,7 +75,7 @@ zip archive: true, dir: mydatas.zipfile.artifact, glob: '', zipFile: mydatas.zip
                 } 
 }
         }
-     stage('UnZip the app')
+    /* stage('UnZip the app')
    {
 when {expression{(mydatas.pipeline != "Deploy") || (mydatas.artifact == "sales")}}    
 steps 
@@ -85,7 +85,7 @@ script
 unzip dir: '.', glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                 } 
 }
-        }
+        }*/
 }
 /*post 
 {
