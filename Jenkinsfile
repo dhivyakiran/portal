@@ -73,8 +73,8 @@ steps
     
 script
 {
-    sh 'mkdir mydatas.artifact[1]'
-    sh 'cd mydatas.artifact[1]'
+    sh 'mkdir agentportal'
+    sh 'cd agentportal'
  zip archive: true, dir: mydatas.artifact[1], zipFile: mydatas.artifact[1]+"_${currentBuild.number}.zip"
   } 
 }
