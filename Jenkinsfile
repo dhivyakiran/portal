@@ -74,8 +74,7 @@ steps
 script
 {
     sh "mkdir $WORKSPACE/"+mydatas.artifact[1]+"/${currentBuild.number}/"
-
- zip archive: true, dir: mydatas.artifact[1]" , zipFile: mydatas.artifact[1]+"_${currentBuild.number}.zip"
+ zip archive: true, dir: mydatas.artifact[1], zipFile: $WORKSPACE/"+mydatas.artifact[1]+"/${currentBuild.number}/mydatas.artifact[1]+"_${currentBuild.number}.zip"
   } 
 }
         }
