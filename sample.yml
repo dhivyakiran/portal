@@ -1,11 +1,28 @@
 agentdetail:
   agentname: slave1
-message:
-  test: Hello World
 zipfile:
   filename: HelloWorldApp
 pipeline: Build
-sample: testmsg
+artifact: Sales
+giturl:
+ url1: https://github.com/dhivyakiran/angular-yml.git
+nexus:
+ artifactId: 1234
+ file: hellowowrldapp
+ type: zip
+ credentialsId: b540a6d8-00dc-4524-af49-8d99d20d3919
+ groupId: sp.sd
+ nexusUrl: localhost:8081
+ nexusVersion: 3.2
+ protocol: http
+ repository: helloworld-angularapp
+ version: 1.1
+sonarqube:
+ url: 
+s3bucket:
+ salesurl:
+ agenturl:
+ membersurl:
 
   
 
