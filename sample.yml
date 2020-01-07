@@ -1,8 +1,8 @@
 agentname: master
 artifact: 
-  - salesportal
-  - agentportal
-  - memberportal
+  - sales
+  - agent
+  - members
 artifactversion: 1.0
 pipeline: Build
 deploy_env: dev
