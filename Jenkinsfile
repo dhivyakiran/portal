@@ -67,18 +67,35 @@ sh 'npm install'
         }
   stage('Zip the app')
    {
-when {expression{(mydatas.pipeline != "Deploy")}}    
-steps 
-{
-  script
-{
-    sh 'mkdir memberportal'
-    zip archive: true, dir: mydatas.artifact[0], zipFile: "salesportal/"+mydatas.artifact[0]+"_${currentBuild.number}.zip"
-    zip archive: true, dir: mydatas.artifact[1], zipFile: "agentportal/"+mydatas.artifact[1]+"_${currentBuild.number}.zip"
-    zip archive: true, dir: mydatas.artifact[2], zipFile: "memberportal/"+mydatas.artifact[2]+"_${currentBuild.number}.zip"
-  } 
+    when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.sales=="sales")}}    
+    steps 
+    {
+      script
+    {
+        zip archive: true, dir: mydatas.artifact.sales, zipFile: "salesportal/"+mydatas.artifact.sales+"_${currentBuild.number}.zip"
+
+      } 
+    }
+    when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.agent=="agent")}}    
+    steps 
+    {
+      script
+    {
+        zip archive: true, dir: mydatas.artifact.agent, zipFile: "agentportal/"+mydatas.artifact.agent+"_${currentBuild.number}.zip"
+
+      } 
+    }
+    when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.members=="members")}}    
+    steps 
+    {
+      script
+    {
+
+        zip archive: true, dir: mydatas.artifact.members, zipFile: "memberportal/"+mydatas.artifact.members+"_${currentBuild.number}.zip"
+      } 
+    }
 }
-        }
+    
     
     /* stage('UnZip the app')
    {
