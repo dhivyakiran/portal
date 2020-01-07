@@ -72,7 +72,8 @@ steps
 {
 script
 {
-zip archive: true, glob: 'sales/**, agent/**, *.', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+ mkdir ./mydatas.zipfile.salesname/${currentBuild.number}/   
+zip archive: true, dir: mydatas.artifact[0] , zipFile: mydatas.zipfile.salesname+"_${currentBuild.number}.zip"
                 } 
 }
         }
