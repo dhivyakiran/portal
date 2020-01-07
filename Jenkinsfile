@@ -42,7 +42,7 @@ stage('Zip the sales app')
        def artifact = mydatas.artifact.size()
        for (int i = 0; i < artifact; i++) 
        {
-       zip archive: true, dir: mydatas.artifact[i], zipFile: mydatas.artifact[i]+"/"+mydatas.artifact[i]+"_${currentBuild.number}.zip" 
+       zip archive: true, dir: mydatas.artifact[i], zipFile: mydatas.artifact[i]+"/"+"${currentBuild.number}/"+mydatas.artifact[i]+"_${currentBuild.number}.zip" 
        }
       } 
     }
