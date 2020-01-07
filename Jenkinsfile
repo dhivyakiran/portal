@@ -65,9 +65,20 @@ sh 'npm install'
 }
    }
         }
-  stage('Zip the app')
+  stage('Zip the app for sales')
    {
-when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales, agent")}}    
+when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales")}}    
+steps 
+{
+script
+{
+zip archive: true, dir: mydatas.artifact, glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+                } 
+}
+        }
+     stage('Zip the app for agent')
+   {
+when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "agent")}}    
 steps 
 {
 script
