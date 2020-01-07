@@ -56,7 +56,7 @@ script
 
    stage('Download Dependencies')
         {
-when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.name1 == "sales")||(mydatas.artifact.name2 == "agent")}}
+when {expression{(mydatas.pipeline != "Deploy")}}
 steps 
 {
 nodejs(nodeJSInstallationName: 'NodeJS')
@@ -65,28 +65,18 @@ sh 'npm install'
 }
    }
         }
-  stage('Zip the app for sales')
+  stage('Zip the app')
    {
-when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.name1 == "sales")}}    
+when {expression{(mydatas.pipeline != "Deploy")}}    
 steps 
 {
 script
 {
-zip archive: true, dir: mydatas.artifact.name1, glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
+zip archive: true, dir: mydatas.artifact, glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
                 } 
 }
         }
-     stage('Zip the app for agent')
-   {
-when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.name2 == "agent")}}    
-steps 
-{
-script
-{
-zip archive: true, dir: mydatas.artifact.name2, glob: '', zipFile: mydatas.zipfile.filename+"_${currentBuild.number}.zip"
-                } 
-}
-        }
+    
     /* stage('UnZip the app')
    {
 when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales")}}    
