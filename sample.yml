@@ -2,7 +2,7 @@ agentname: master
 artifact: 
  sales: sales
  agent: agent
- members: members
+ members: 
 artifactversion: 1.0
 pipeline: Build
 deploy_env: dev
