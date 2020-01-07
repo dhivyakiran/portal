@@ -72,9 +72,9 @@ steps
 {
 script
 {
- mkdir ./mydatas.zipfile.salesname/${currentBuild.number}/   
-zip archive: true, dir: mydatas.artifact[0] , zipFile: mydatas.zipfile.salesname+"_${currentBuild.number}.zip"
-                } 
+   
+ zip archive: true, dir: mydatas.artifact[0] , zipFile: mydatas.zipfile.salesname+"_${currentBuild.number}.zip"
+  } 
 }
         }
     
