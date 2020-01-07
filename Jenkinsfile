@@ -77,13 +77,26 @@ sh 'npm install'
         zip archive: true, dir: mydatas.artifact.sales, zipFile: "salesportal/"+mydatas.artifact.sales+"_${currentBuild.number}.zip"
 
       } 
+    }
+   }
+   stage('Zip the agent app')
+   {
+    
+    steps 
+    { 
     when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.agent=="agent")}}    
       script
     {
         zip archive: true, dir: mydatas.artifact.agent, zipFile: "agentportal/"+mydatas.artifact.agent+"_${currentBuild.number}.zip"
 
       } 
-
+    }
+   }
+stage('Zip the members app')
+   {
+    
+    steps 
+    {
     when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.members=="members")}}    
       script
     {
