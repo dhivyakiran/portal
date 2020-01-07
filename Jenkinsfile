@@ -91,7 +91,7 @@ sh 'npm install'
       } 
 }
     
-    
+   }   
     /* stage('UnZip the app')
    {
 when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales")}}    
