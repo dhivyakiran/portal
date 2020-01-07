@@ -33,7 +33,7 @@ script
    }
 }
 }
- stage('Display changeset') {
+/* stage('Display changeset') {
       steps {
         script {
            def changeLogSets = currentBuild.changeSets
@@ -51,7 +51,7 @@ script
            }
                }
             }
-           }
+           }*/
         
 
    stage('Download Dependencies')
@@ -70,11 +70,12 @@ sh 'npm install'
 when {expression{(mydatas.pipeline != "Deploy")}}    
 steps 
 {
-    
-script
+  script
 {
-      
- zip archive: true, dir: mydatas.artifact[0], zipFile: "salesportal/"+mydatas.artifact[0]+"_${currentBuild.number}.zip"
+    sh 'mkdir memberportal'
+    zip archive: true, dir: mydatas.artifact[0], zipFile: "salesportal/"+mydatas.artifact[0]+"_${currentBuild.number}.zip"
+    zip archive: true, dir: mydatas.artifact[1], zipFile: "agentportal/"+mydatas.artifact[1]+"_${currentBuild.number}.zip"
+    zip archive: true, dir: mydatas.artifact[2], zipFile: "memberportal/"+mydatas.artifact[2]+"_${currentBuild.number}.zip"
   } 
 }
         }
