@@ -65,7 +65,7 @@ sh 'npm install'
 }
    }
         }
-  
+
   stage('Zip the sales app')
    {
      when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.sales=="sales")}}    
@@ -74,38 +74,17 @@ sh 'npm install'
       
       script
     {
-        zip archive: true, dir: mydatas.artifact.sales, zipFile: "salesportal/"+mydatas.artifact.sales+"_${currentBuild.number}.zip"
+          def artifact = mydatas.artifact.size()
+           for (int i = 0; i < artifact; i++) {
+              zip archive: true, dir: mydatas.artifact[i], zipFile: mydatas.artifact[i]+"/"+mydatas.artifact[i]+"_${currentBuild.number}.zip" 
+            }
+        
 
       } 
     }
    }
-   stage('Zip the agent app')
-   {
-     when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.agent=="agent")}}    
-    steps 
-    { 
    
-      script
-    {
-        zip archive: true, dir: mydatas.artifact.agent, zipFile: "agentportal/"+mydatas.artifact.agent+"_${currentBuild.number}.zip"
-
-      } 
-    }
-   }
-stage('Zip the members app')
-   {
-     when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact.members=="members")}}    
-    steps 
-    {
    
-      script
-    {
-
-        zip archive: true, dir: mydatas.artifact.members, zipFile: "memberportal/"+mydatas.artifact.members+"_${currentBuild.number}.zip"
-      } 
-}
-    
-   }   
     /* stage('UnZip the app')
    {
 when {expression{(mydatas.pipeline != "Deploy")||(mydatas.artifact == "sales")}}    
