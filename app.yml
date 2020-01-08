@@ -1,6 +1,7 @@
 agentname: master
 artifact: 
   - sales
+  - agent
   - members
 artifactversion: 1.0
 pipeline: Build
