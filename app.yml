@@ -1,5 +1,10 @@
 branchname: develop
 env: dev
+artifact: 
+  - sales
+  - common
+  - members
+artifactversion: 1.0
 
   
 
