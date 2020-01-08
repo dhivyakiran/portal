@@ -12,7 +12,6 @@
                 userSSL: true,
                 apiVersion: 'beta'
             });
-
     }])
     .controller('MainController', ['$scope', 'baasicArticleService',
         function($scope, articleService) {
