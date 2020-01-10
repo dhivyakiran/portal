@@ -5,7 +5,7 @@ pipeline {
             steps {
                script {
            def changeLogSets = currentBuild.changeSets
-           def trigger
+           env.trigger
            for (int i = 0; i < changeLogSets.size(); i++) {
            def entries = changeLogSets[i].items
            for (int j = 0; j < entries.length; j++) {
@@ -16,7 +16,7 @@ pipeline {
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
                    if(filename == "Jenkinsfile"){
-                   trigger=true;    
+                   env.trigger=true;    
                    break; 
                    }
                }
@@ -32,7 +32,7 @@ pipeline {
               steps{
                   
                  script{
-                  if(trigger==true){
+                  if(env.trigger==true){
                   echo "hi"
                       
                   }
