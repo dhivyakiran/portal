@@ -1,5 +1,8 @@
 pipeline {				
-    agent any				
+    agent any	
+    environment {
+        lastfile = 'default'
+    }
     stages {
          stage ("changeset") {		
             steps {
@@ -16,14 +19,14 @@ pipeline {
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
                    if(filename == "Jenkinsfile"){
-                   env.trigger="true";    
+                   lastfile="true";    
                    break; 
                    }
                }
               
            }
             }
-                if(env.trigger=="true"){
+                if(lastfile=="true"){
                   echo "hi"
                       
                  }  
