@@ -25,15 +25,16 @@ pipeline {
                         echo "${file.path}"
                         filename = file.path
                         echo "filename: ${filename}"
-                        if(filename == "Jenkinsfile"){
-                        echo "inside if"
-                        lastfile=1   
-                        break
+                            if(filename == "Jenkinsfile")
+                            {
+                                echo "inside if"
+                                lastfile=1   
+                                break
+                            }
                     }
-                 }
-              }
-            }
-         } 
+                }
+             }
+          } 
        }
     }
     stage ("build aangular pipeline") {		
