@@ -1,14 +1,11 @@
 pipeline {				
     agent any	
-    environment {
-        lastfile = 'default'
-    }
     stages {
          stage ("changeset") {		
             steps {
                script {
            def changeLogSets = currentBuild.changeSets
-           env.trigger
+         lastfile = 0
            for (int i = 0; i < changeLogSets.size(); i++) {
            def entries = changeLogSets[i].items
            for (int j = 0; j < entries.length; j++) {
@@ -19,14 +16,14 @@ pipeline {
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
                    if(filename == "Jenkinsfile"){
-                   lastfile="true";    
+                   lastfile=1;    
                    break; 
                    }
                }
               
            }
             }
-                if(lastfile=="true"){
+                if(lastfile==1){
                   echo "hi"
                       
                  }  
