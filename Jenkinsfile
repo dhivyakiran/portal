@@ -23,26 +23,26 @@ pipeline {
               
            }
             }
-                if(lastfile==1){
-                  echo "hi"
+                //if(lastfile==1){
+                 // echo "hi"
                       
-                 }  
+                // }  
                
                } 
                  
             }
         }
-          /*stage ("build") {		
-               when {expression{(env.trigger=="true")}}
+          stage ("build") {		
+               //when {expression{(env.trigger=="true")}}
               steps{
                   
-                 //script{
-                  //if(env.trigger==true){
+                 script{
+                  if(lastfile==1){
                   echo "hi"
                       
-                 // }
-                  //}
+                 }
+                  }
               }
-          }*/
+          }
     }
 }
