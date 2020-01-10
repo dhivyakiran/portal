@@ -1,4 +1,4 @@
-env: int
+env: dev
 artifact: 
   - members
   - common
