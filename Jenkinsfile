@@ -44,7 +44,7 @@ pipeline {
                  script{
                   if(lastfile == 1){
                   echo "hi"
-                      
+                  build job: 'angular-pipeline', wait: false    
                  }
                   }
               }
