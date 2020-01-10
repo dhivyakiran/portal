@@ -5,7 +5,7 @@ pipeline {
             steps {
                script {
            def changeLogSets = currentBuild.changeSets
-           def lastfile = [:]
+           def lastfile = ""
            for (int i = 0; i < changeLogSets.size(); i++) {
            def entries = changeLogSets[i].items
            for (int j = 0; j < entries.length; j++) {
@@ -16,18 +16,18 @@ pipeline {
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
                    if(filename == "app.yml"){
-                   lastfile=1;    
+                   lastfile="yes";    
                    break; 
                    }
                }
            }
             }
-                   parallel lastfile
+                   echo ${lastfile}
                } 
             }
         }
           stage ("build") {		
-               when {expression{(lastfile==1)}}
+               when {expression{(lastfile=="yes")}}
               steps{
                   
                  // script{
