@@ -24,10 +24,11 @@ pipeline {
          stage ("build") {		
              steps
              {
-                  if(filename == "app.yml"){
+                 when {expression{(filename == "app.yml")}}
+                  
                    echo "run the job"
                    build job: 'angular-pipeline', wait: true
-                  }
+                  
              }
              
          }
