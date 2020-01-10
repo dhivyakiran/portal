@@ -18,9 +18,9 @@ pipeline {
                    
                    //build job: 'angular-pipeline', wait: true
                   // }
-               }
-           }
-           }
+              // }
+          // }
+          // }
                
                 }
             }
