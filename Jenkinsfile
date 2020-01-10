@@ -20,9 +20,10 @@ pipeline {
                    break; 
                    }
                }
+                parallel trigger
            }
             }
-                parallel trigger   
+               
                } 
             }
         }
