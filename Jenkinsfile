@@ -23,7 +23,7 @@ pipeline {
               
            }
             }
-                   if(env.trigger==true){
+                   if(env.trigger=="true"){
                   echo "hi"
                       
                  }
