@@ -15,23 +15,14 @@ pipeline {
                    def file = files[k]
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
+                   if(filename == "app.yml"){
+                       build job: 'angular-pipeline', wait: true
+                   }
                }
            }
            }
                } 
             }
         }
-         stage ("build") {	
-             when {expression{(filename == "app.yml")}}
-             steps
-             {
-                 
-                  
-                   echo "run the job"
-                   build job: 'angular-pipeline', wait: true
-                  
-             }
-             
-         }
     }
 }
