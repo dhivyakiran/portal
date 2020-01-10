@@ -16,7 +16,7 @@ pipeline {
                def files = new ArrayList(entry.affectedFiles)
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
-                   echo " ${file.editType.name} ${file.path}"
+                   echo "${file.path}"
                    filename = file.path
                    echo "filename: ${filename}"
                    if(filename == "Jenkinsfile"){
