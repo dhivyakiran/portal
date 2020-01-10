@@ -37,7 +37,7 @@ pipeline {
               steps{
                   
                  script{
-                  if(lastfile==1){
+                  if(lastfile == 1){
                   echo "hi"
                       
                  }
