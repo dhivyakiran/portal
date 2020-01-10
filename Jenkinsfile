@@ -15,7 +15,7 @@ pipeline {
                    def file = files[k]
                    echo " ${file.editType.name} ${file.path}"
       
-                  if(${file.editType.name}=="app.yml"){
+                  if(file.editType.name == "app.yml"){
                    
                    build job: 'angular-pipeline', wait: true
                   }
