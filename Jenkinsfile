@@ -25,7 +25,7 @@ pipeline {
                         echo "${file.path}"
                         filename = file.path
                         echo "filename: ${filename}"
-                            if(filename == "Jenkinsfile")
+                            if(filename == "app.yml")
                             {
                                 echo "inside if"
                                 lastfile=1   
