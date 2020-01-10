@@ -20,7 +20,7 @@ pipeline {
                    filename = file.editType.name
                    if(filename == "Jenkinsfile"){
                    lastfile=1;    
-                   break; 
+                   return
                    }
                }
               
