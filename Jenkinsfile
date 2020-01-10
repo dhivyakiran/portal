@@ -20,13 +20,16 @@ pipeline {
                    }
                }
            }
-           }
+            }
                } 
             }
         }
           stage ("build") {		
               steps{
+                  if(trigger==true){
                   echo "hi"
+                      
+                  }
               }
           }
     }
