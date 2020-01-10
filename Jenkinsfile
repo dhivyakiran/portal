@@ -26,9 +26,11 @@ pipeline {
         }
           stage ("build") {		
               steps{
+                  script{
                   if(trigger==true){
                   echo "hi"
                       
+                  }
                   }
               }
           }
