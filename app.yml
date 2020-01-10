@@ -2,6 +2,6 @@ env: dev
 artifact: 
   - members
   - common
-artifactversion: 1.0
+artifactversion: 1.1
   
 
