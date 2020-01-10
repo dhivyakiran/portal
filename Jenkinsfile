@@ -16,7 +16,7 @@ pipeline {
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
                    if(filename == "Jenkinsfile"){
-                   env.trigger=true;    
+                   env.trigger="true";    
                    break; 
                    }
                }
@@ -28,7 +28,7 @@ pipeline {
             }
         }
           stage ("build") {		
-               when {expression{(env.trigger==true)}}
+               when {expression{(env.trigger=="true")}}
               steps{
                   
                  //script{
