@@ -15,7 +15,7 @@ pipeline {
                    def file = files[k]
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
-                   if(filename == "app.yml"){
+                   if(filename == "Jenkinsfile"){
                    trigger=true;    
                    break; 
                    }
