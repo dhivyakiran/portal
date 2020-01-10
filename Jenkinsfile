@@ -14,8 +14,8 @@ pipeline {
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
                    echo " ${file.editType.name} ${file.path}"
-          echo " ${file.name}"
-                  if(${file.editType.name}=="app"){
+      
+                  if(${file.editType.name}=="app.yml"){
                    
                    build job: 'angular-pipeline', wait: true
                   }
