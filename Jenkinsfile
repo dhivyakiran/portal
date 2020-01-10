@@ -18,7 +18,9 @@ pipeline {
                    def file = files[k]
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
+                   echo "filename: ${filename}"
                    if(filename == "Jenkinsfile"){
+                    echo "inside if"
                    lastfile=1   
                    break
                    }
