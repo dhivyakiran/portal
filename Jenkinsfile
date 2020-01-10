@@ -3,8 +3,8 @@ pipeline {
     stages {
          stage ("build") {		
             steps {
-                when { changeset "app.yml" }
-                build 'angular-pipeline'	
+               
+                build '../angular-pipeline'	
             }
         }
     }
