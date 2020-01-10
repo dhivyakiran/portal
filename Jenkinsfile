@@ -23,11 +23,15 @@ pipeline {
               
            }
             }
+                   if(env.trigger==true){
+                  echo "hi"
+                      
+                 }
                
                } 
             }
         }
-          stage ("build") {		
+          /*stage ("build") {		
                when {expression{(env.trigger=="true")}}
               steps{
                   
@@ -38,6 +42,6 @@ pipeline {
                  // }
                   //}
               }
-          }
+          }*/
     }
 }
