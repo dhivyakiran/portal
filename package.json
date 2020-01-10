@@ -1,7 +1,7 @@
 {
   "name": "learning-angularjs",
   "version": "0.0.3",
-  "private": true,
+  "private": false,
   "dependencies": {
     "karma": "0.10.2",
     "karma-firefox-launcher": "0.1.0",
