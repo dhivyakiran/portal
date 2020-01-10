@@ -25,13 +25,15 @@ pipeline {
             }
         }
           stage ("build") {		
+               when {expression{(trigger==true)}}
               steps{
-                  script{
-                  if(trigger==true){
+                  
+                 // script{
+                  //if(trigger==true){
                   echo "hi"
                       
-                  }
-                  }
+                 // }
+                  //}
               }
           }
     }
