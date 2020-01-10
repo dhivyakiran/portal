@@ -3,8 +3,7 @@ pipeline {
     stages {
          stage ("build") {		
             steps {
-               
-                build '../angular-pipeline'	
+               build job: 'angular-pipeline', wait: true
             }
         }
     }
