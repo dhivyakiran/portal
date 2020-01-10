@@ -19,8 +19,8 @@ pipeline {
                    echo " ${file.editType.name} ${file.path}"
                    filename = file.editType.name
                    if(filename == "Jenkinsfile"){
-                   lastfile=1;    
-                   return
+                   lastfile=1   
+                   break
                    }
                }
               
