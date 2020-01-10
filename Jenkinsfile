@@ -31,11 +31,11 @@ pipeline {
                                 lastfile=1   
                                 break
                             }
+                        }
                     }
                 }
-             }
-          } 
-       }
+            } 
+        }
     }
     stage ("build aangular pipeline") {		
       steps
