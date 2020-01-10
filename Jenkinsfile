@@ -1,11 +1,14 @@
 pipeline {				
-    agent any	
+    agent any
+    environment {
+        lastfile = 0
+    }
     stages {
          stage ("changeset") {		
             steps {
                script {
            def changeLogSets = currentBuild.changeSets
-         def lastfile = 0
+         
            for (int i = 0; i < changeLogSets.size(); i++) {
            def entries = changeLogSets[i].items
            for (int j = 0; j < entries.length; j++) {
