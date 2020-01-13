@@ -5,9 +5,13 @@ pipeline {
           stage("build & SonarQube analysis") {
             agent any
             steps {
+                script {
+             scannerHome = tool 'SonarScanner';
+        }
               withSonarQubeEnv('My SonarQube Server') {
-                sh 'mvn clean package sonar:sonar'
+                sh "${scannerHome}/bin/sonar-scanner.bat"
               }
             }
           }      
+}
 }
