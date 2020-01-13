@@ -8,7 +8,7 @@ pipeline {
                 script {
              scannerHome = tool 'SonarQubeScanner';
         }
-              withSonarQubeEnv('My SonarQube Server') {
+              withSonarQubeEnv('SonarQubeScanner') {
                 sh "${scannerHome}/bin/sonar-scanner.bat"
               }
             }
