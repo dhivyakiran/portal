@@ -6,7 +6,7 @@ pipeline {
             agent any
             steps {
                 script {
-             scannerHome = tool 'SonarScanner';
+             scannerHome = tool 'SonarQubeScanner';
         }
               withSonarQubeEnv('My SonarQube Server') {
                 sh "${scannerHome}/bin/sonar-scanner.bat"
