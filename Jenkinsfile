@@ -44,7 +44,7 @@ pipeline {
          {
             if(lastfile == 1)
             {
-             build job: 'angular-pipeline', wait: true    
+             build job: 'portal', wait: true    
             }
           }
         }
