@@ -3,14 +3,16 @@ pipeline {
     
     stages {
           stage("build & SonarQube analysis") {
-            agent any
+            environment {
+        scannerHome = tool 'SonarQubeScanner'
+    }
             steps {
-                script {
-             scannerHome = tool 'SonarQubeScanner';
+        withSonarQubeEnv('sonarqube') {
+            sh "${scannerHome}/bin/sonar-scanner"
         }
-              withSonarQubeEnv('SonarQubeScanner') {
-                sh "${scannerHome}/bin/sonar-scanner.bat"
-              }
+        timeout(time: 10, unit: 'MINUTES') {
+            waitForQualityGate abortPipeline: true
+        }
             }
           }      
 }
