@@ -21,7 +21,7 @@ agent any
                         }
                     else
                     {
-                        currentBuild.result = 'ABORTED'
+                        currentBuild.result = 'NOT_BUILT'
                         error("Stopping build")
                     }
 
