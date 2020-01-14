@@ -19,6 +19,11 @@ agent any
                        {
                             build job: 'angular-pipeline', wait: true    
                         }
+                    else
+                    {
+                        currentBuild.result = 'ABORTED'
+                        error("Stopping build")
+                    }
 
                   }
 
