@@ -5,7 +5,7 @@ agent any
     stages  { 
 
          stage('Clone sources')  {
-when { triggeredBy 'TimerTrigger' }
+
              steps  {
 
                 script {
