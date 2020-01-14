@@ -1,6 +1,7 @@
 pipeline { 
     agent any
-    environment {
+    environment 
+    {
       lastfile = 0
     }
     stages 
