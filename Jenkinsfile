@@ -15,30 +15,19 @@ agent any
                    def filename = filelist.find{item->item.contains("yml")} //Returns the list of files having the yaml file extension from the filelist ArrayList
 
                    echo "${filename}" //<filename>.yaml
+                    if(filename == "app.yml")
+            {
+             build job: 'angular-pipeline', wait: true    
+            }
 
                   }
 
              }
 
         }
-          stage ("build angular pipeline") { 
-      steps
-      {
-         script
-         {
-            if(filename == "app.yml")
-            {
-             build job: 'angular-pipeline', wait: true    
-            }
-          }
-        }
     }
 
-    }
-
-  
-
-}
+  }
 
 def getChangedFilesList() {
 
