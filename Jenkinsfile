@@ -16,7 +16,7 @@ agent any
 
                    echo "${filename}" //<filename>.yaml
                     if(filename == "app.yml")
-                        {
+                       {
                             build job: 'angular-pipeline', wait: true    
                         }
 
