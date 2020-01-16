@@ -3,6 +3,13 @@ agent
 {
    label "master"
 }
+parameters {
+    choice(choices: ['dev', 'int', 'qa', 'prod', 'uat'], description: 'environment', name: 'env')
+}
+environment 
+{
+   env="${params.env}"
+}
 stages  
 { 
    stage('Clone sources')  
@@ -19,7 +26,7 @@ stages
                    echo "${filename}" //<filename>.yaml
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
-                            build job: 'angular-pipeline', wait: true    
+                            build job: 'angular-pipeline', parameters: [[$class: 'StringParameterValue', name: 'env', value: '${filename}']], wait: true    
                         }
                     else
                     {
