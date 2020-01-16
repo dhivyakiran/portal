@@ -20,7 +20,7 @@ stages
                    echo "${filename}" //<filename>.yaml
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "test.yml"))
                        {
-                            build job: 'angular-pipeline', parameters: [[$class: 'StringParameterValue', name: 'envname', value: '${filename}']], wait: true    
+                            build job: 'angular-pipeline', parameters: [[$class: 'StringParameterValue', name: 'envname', value: "${filename%.*}"]], wait: true    
                         }
                     /*else
                     {
