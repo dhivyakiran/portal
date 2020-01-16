@@ -2,4 +2,4 @@ env: qa
 artifact: 
   - members
   - common
-artifactversion: 1.2
+artifactversion: 1.1
