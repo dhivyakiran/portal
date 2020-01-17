@@ -19,18 +19,12 @@ stages
 
                    echo "${filename}" //<filename>.yaml
                      
-            def filevalue = filename.split(/\./)
+                   def filevalue = filename.split(/\./)
 
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "test.yml"))
                        {
                             build job: 'angular-pipeline', parameters: [[$class: 'StringParameterValue', name: 'envname', value: "${filevalue[0]}"]], wait: true    
                         }
-                    /*else
-                    {
-                        currentBuild.result = 'ABORTED'
-                        error("Stopping build")
-                    }*/
-
                   }
 
              }
