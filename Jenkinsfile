@@ -22,7 +22,8 @@ stages
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
                    echo "all commited files : ${file.path}"
-                  def ymlfile = file.path.find{item->item.contains("yml")} 
+                  def filepath = file.path
+                  def ymlfile = filepath.find{item->item.contains("yml")} 
                   def filename = ymlfile
                   echo "only yml files: ${filename}"
                 def filevalue=filename.split(/\./)
