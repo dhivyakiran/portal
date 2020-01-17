@@ -35,7 +35,7 @@ def getChangedFilesList() {
 
 
      def changeLogSets = currentBuild.changeSets
-   def changedfile=[]
+   def changedFiles=[]
            for (int i = 0; i < changeLogSets.size(); i++) {
            def entries = changeLogSets[i].items
            for (int j = 0; j < entries.length; j++) {
