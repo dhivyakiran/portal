@@ -5,7 +5,7 @@ agent
 }
 environment 
 {
-   filename=[]
+   filename=""
 
 }
 stages  
@@ -28,8 +28,9 @@ stages
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
                    //echo "all commited files : ${file.path}"
-                  filename = file.path
-                 break
+                  findFiles = file.path
+                  findFiles(glob: '**/.yml')
+                 
               
                }
            }
