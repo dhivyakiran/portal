@@ -20,7 +20,7 @@ stages
                def files = new ArrayList(entry.affectedFiles)
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
-                   echo "{file.path}"
+                   echo "${file.path}"
                   def filename = ${file.path}
                   
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
