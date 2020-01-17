@@ -5,7 +5,7 @@ agent
 }
 environment 
 {
-   filename=""
+   filename=[]
 
 }
 stages  
