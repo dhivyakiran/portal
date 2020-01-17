@@ -27,7 +27,7 @@ stages
                   echo "${filevalue}"
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
-                           build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: ${filevalue[0]}]], wait: true    
+                           build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: filevalue[0]]], wait: true    
                         echo "entered success"
                        }
                }
