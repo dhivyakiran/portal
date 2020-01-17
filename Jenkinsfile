@@ -35,7 +35,7 @@ stages
            }
            }
              echo "${filename}"
-            /* def filevalue=filename.split(/\./)
+            def filevalue=filename.split(/\./)
                   echo "split the yml filename: ${filevalue}"
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
@@ -43,7 +43,7 @@ stages
                         echo "entered success"
                        }
                    
-                    }*/
+                    }
 
              }
 
