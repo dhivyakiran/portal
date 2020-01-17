@@ -29,7 +29,7 @@ stages
                }
            }
            }
-            echo "${allfiles}"
+            echo allfiles.size()
             /* def filevalue=filename.split(/\./)
                   echo "split the yml filename: ${filevalue}"
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
