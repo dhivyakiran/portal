@@ -22,10 +22,10 @@ stages
                    def file = files[k]
                    echo "${file.path}"
                   def filename = file.path
-                  
+                  def filevalue=filename.split(/\./)
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
-                          echo "yml file get success"
+                          build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: ${filevalue[0]}]], wait: true    
                        }
                   
                }
