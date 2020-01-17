@@ -3,10 +3,11 @@ agent
 {
    label "master"
 }
-   environment
-   {
-    filename  
-   }
+environment 
+{
+   filename=""
+
+}
 stages  
 { 
    stage('Clone sources')  
