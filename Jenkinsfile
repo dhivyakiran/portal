@@ -23,7 +23,7 @@ stages
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
                    echo "all commited files : ${file.path}"
-                  def allfiles = allfiles.add(file.path)
+                  allfiles = allfiles.add(file.path)
                  
                
                }
@@ -48,6 +48,6 @@ stages
   }
 
 
-
+}
 
 
