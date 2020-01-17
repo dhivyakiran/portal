@@ -41,9 +41,9 @@ stages
                        {
                            build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: filevalue[0]]], wait: true    
                         echo "entered success"
-                       }
+                       }*/
                    
-                    }*/
+                    }
 
              }
 
