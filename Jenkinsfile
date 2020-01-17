@@ -3,6 +3,10 @@ agent
 {
    label "master"
 }
+   environment
+   {
+    filename  
+   }
 stages  
 { 
    stage('Clone sources')  
@@ -12,7 +16,7 @@ stages
          script 
          {
    
-           def allfiles = []       
+          
             def changeLogSets = currentBuild.changeSets
            for (int i = 0; i < changeLogSets.size(); i++) {
            def entries = changeLogSets[i].items
@@ -23,13 +27,13 @@ stages
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
                    echo "all commited files : ${file.path}"
-                  allfiles = allfiles.add(file.path)
+                  filename = file.path
                  
-               echo "${allfiles}"
+              
                }
            }
            }
-            
+             echo "${filename}"
             /* def filevalue=filename.split(/\./)
                   echo "split the yml filename: ${filevalue}"
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
