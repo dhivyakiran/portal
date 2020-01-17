@@ -2,7 +2,7 @@ env: int
 artifact: 
   - members
   - common
-artifactversion: 1.1
+artifactversion: 1.2
 
 
 
