@@ -5,7 +5,7 @@ agent
 }
 environment 
 {
-   file=""
+   filename=""
 
 }
 stages  
@@ -27,14 +27,14 @@ stages
                def files = new ArrayList(entry.affectedFiles)
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
-                   echo "all commited files : ${file.path}"
+                   //echo "all commited files : ${file.path}"
                   filename = file.path
                  break
               
                }
            }
            }
-             echo "${file}"
+             echo "${filename}"
             /*def filevalue=filename.split(/\./)
                   echo "split the yml filename: ${filevalue}"
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
