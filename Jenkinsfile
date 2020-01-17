@@ -21,13 +21,13 @@ stages
                def files = new ArrayList(entry.affectedFiles)
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
-                   echo " ${file.editType.name} ${file.path}"
+                   echo "${file.path}"
                   def filename = file.path
                 def filevalue=filename.split(/\./)
                   echo "${filevalue}"
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
-                           // build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: ${filevalue[0]}]], wait: true    
+                           build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value:"${filevalue[0]}"]], wait: true    
                         echo "entered success"
                        }
                }
