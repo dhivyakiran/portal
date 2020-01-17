@@ -29,7 +29,7 @@ stages
                    def file = files[k]
                    echo "all commited files : ${file.path}"
                   filename = file.path
-                 
+                 break
               
                }
            }
