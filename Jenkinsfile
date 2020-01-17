@@ -21,10 +21,12 @@ stages
                def files = new ArrayList(entry.affectedFiles)
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
-                   echo "${file.path}"
-                  def filename = file.path
+                   echo "all commited files : ${file.path}"
+                  def ymlfile = file.path.find{item->item.contains("yml")} 
+                  def filename = ymlfile
+                  echo "only yml files: ${filename}"
                 def filevalue=filename.split(/\./)
-                  echo "${filevalue}"
+                  echo "split the yml filename: ${filevalue}"
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
                            build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: filevalue[0]]], wait: true    
