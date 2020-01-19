@@ -24,7 +24,7 @@ stages
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
                    echo "${file.path}"
-                  filenmae=file.path
+                  def filenmae=file.path
                   
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
