@@ -15,6 +15,7 @@ stages
       {
          script 
          {
+            def filename
             def changeLogSets = currentBuild.changeSets
            for (int i = 0; i < changeLogSets.size(); i++) {
            def entries = changeLogSets[i].items
@@ -24,20 +25,22 @@ stages
                for (int k = 0; k < files.size(); k++) {
                    def file = files[k]
                    echo "${file.path}"
-                  def filename=file.path
+                  filename=file.path
                   
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
                           echo "yml file get success"
                           lastfile=1
+                          break
                        }
                   
                }
            }
            }
+            def filevalue=filename.split(/\./)
             if(lastfile==1)
             {
-               echo "success"
+               build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: ${filevalue[0]}]], wait: true
             }
          }
       }
