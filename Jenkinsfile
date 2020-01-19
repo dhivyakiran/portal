@@ -38,11 +38,12 @@ stages
            }
            }
             
-            def filevalue=filename.split(/\./)
-            echo "${filevalue}"
+           
             
             if(lastfile==1)
             {
+                def filevalue=filename.split(/\./)
+            echo "${filevalue}"
                echo "get into pipeline"
                build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "${filevalue[0]}"]], wait: true
             }
