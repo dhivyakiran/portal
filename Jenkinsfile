@@ -15,6 +15,7 @@ stages
       {
          script 
          {
+            @NonCPS
             def filename
             def changeLogSets = currentBuild.changeSets
            for (int i = 0; i < changeLogSets.size(); i++) {
