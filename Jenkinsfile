@@ -39,8 +39,6 @@ stages
            }
            }
             
-           
-            @NonCPS
             if(lastfile==1)
             {
                 def filevalue=filename.split(/\./)
