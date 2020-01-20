@@ -1,7 +1,7 @@
 pipeline  {   
 agent
 {
-   label "master"
+   label "slave1"
 }
 environment
    {
@@ -30,7 +30,7 @@ stages
                   
                     if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
                        {
-                          echo "yml file get success"
+                          //echo "yml file get success"
                           lastfile=1
                           break
                        }
@@ -44,7 +44,7 @@ stages
                 def filevalue=filename.split(/\./)
             echo "${filevalue}"
                echo "get into pipeline"
-               build job: 'angular-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "${filevalue[0]}"]], wait: true
+               build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "${filevalue[0]}"]], wait: true
             }
          }
       }
