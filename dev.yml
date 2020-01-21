@@ -1,4 +1,4 @@
-env: qa
+env: dev
 artifact: 
   - members
   - common
