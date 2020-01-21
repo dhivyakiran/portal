@@ -1,8 +1,8 @@
 env: dev
 artifact: 
   - members
-  - common
-artifactversion: 1.1
+  - agent
+artifactversion: 1.2
 
 
 
