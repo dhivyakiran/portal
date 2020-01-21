@@ -32,7 +32,7 @@ stages
                        {
                           //echo "yml file get success"
                           lastfile=1
-                          break
+                          
                        }
                   
                }
