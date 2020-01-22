@@ -9,7 +9,7 @@ environment
    }
 stages  
 { 
-   stage('Clone sources')  
+   stage('Trigger the portal pipeline job')  
    {
       steps  
       {
@@ -40,7 +40,7 @@ stages
              {
                 def filevalue=filename.split(/\./)
                 echo "${filevalue}"
-                echo "get into pipeline"
+                echo "Triggered the portal pipeline"
                 build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "${filevalue[0]}"]], wait: true
              }
            }
