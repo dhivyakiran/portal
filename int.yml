@@ -1,7 +1,8 @@
 env: int
 artifact: 
-  - members
-  - common
+  - member
+  - sales
+  - agent
 artifactversion: 1.2
 
 
