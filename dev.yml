@@ -1,7 +1,7 @@
 env: dev
 artifact: 
   - agent
-  - members
+  - sales
 artifactversion: 1.2
 
 
