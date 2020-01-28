@@ -3,7 +3,7 @@ artifact:
   - agent
   - member
   - sales
-artifactversion: 1.2
+artifactversion: '1.2'
 
 
 
