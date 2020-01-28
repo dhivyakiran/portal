@@ -4,6 +4,7 @@ artifact:
   - member
   - sales
 artifactversion: '1.2'
+deployversion: '94'
 
 
 
