@@ -1,10 +1,9 @@
 env: dev
-artifact: 
+deployment_artifacts: 
   - agent
   - member
   - sales
-artifactversion: '1.2'
-deployversion: '94'
+deploy_version: '94'
 
 
 
