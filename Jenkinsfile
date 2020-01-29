@@ -45,6 +45,7 @@ pipeline
 							}
 						}
 					}
+					echo "HELLO : ${lastfile}"
 					if(lastfile==0)
 					{
 						//def filevalue=filename.split(/\./)
