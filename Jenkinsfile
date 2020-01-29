@@ -29,19 +29,19 @@ stages
                     def file = files[k]
                     echo "${file.path}"
                     filename=file.path
-                    if((filename == "dev.yml" || filename == "int.yml" || filename == "qa.yml"))
+                    if((filename == "int.yml" || filename == "qa.yml" || filename == "uat.yml" || filename == "prod.yml"))
                     {
                         lastfile=1
-                    }
+                    } 
                   }
                }
              }
-             if(lastfile==1)
+             if(lastfile==0)
              {
                 def filevalue=filename.split(/\./)
                 echo "${filevalue}"
                 echo "Triggered the portal pipeline"
-                build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "${filevalue[0]}"]], wait: true
+                build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "dev"]], wait: true
              }
            }
         }
