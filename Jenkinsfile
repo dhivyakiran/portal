@@ -50,7 +50,7 @@ pipeline
 					if(lastfile==1)
 					{
 						//def filevalue=filename.split(/\./)
-						echo "hai:${filevalue}"
+						//echo "hai:${filevalue}"
 						echo "Triggered the portal pipeline"
 						build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "dev"]], wait: true
 					}
