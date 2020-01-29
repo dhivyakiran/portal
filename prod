@@ -1,5 +1,0 @@
-env: prod
-artifact: 
-  - members
-  - common
-artifactversion: 1.3

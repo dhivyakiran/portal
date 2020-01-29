@@ -1,0 +1,6 @@
+env: prod
+deployment_artifacts: 
+  - agent
+  - member
+  - sales
+deploy_version: '98'
