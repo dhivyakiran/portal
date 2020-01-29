@@ -1,8 +1,9 @@
 env: qa
-artifact: 
-  - members
-  - common
-artifactversion: 1.3
+deployment_artifacts: 
+  - agent
+  - member
+  - sales
+deploy_version: '98'
 
 
 
