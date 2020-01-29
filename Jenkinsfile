@@ -36,16 +36,20 @@ pipeline
 								def file = files[k]
 								echo "${file.path}"
 								filename=file.path
-								if((filename == "int.yml" || filename == "qa.yml" || filename == "uat.yml" || filename == "prod.yml"))
+								/*if((filename == "int.yml" || filename == "qa.yml" || filename == "uat.yml" || filename == "prod.yml"))
 								{
 									lastfile=1
-								} 
+								} */
+								if(filename == "dev.yml")
+								{
+									lastfile=1
+								}
 							}
 						}
 					}
-					if(lastfile==0)
+					if(lastfile==1)
 					{
-						def filevalue=filename.split(/\./)
+						//def filevalue=filename.split(/\./)
 						echo "hai:${filevalue}"
 						echo "Triggered the portal pipeline"
 						build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "dev"]], wait: true
