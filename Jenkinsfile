@@ -12,7 +12,7 @@ pipeline
 	}
 	environment
 	{
-		lastfile=0
+		lastfile='0'
 	}
 	stages  
 	{ 
@@ -38,7 +38,7 @@ pipeline
 								filename=file.path
 								if((filename == "int.yml" || filename == "qa.yml" || filename == "uat.yml" || filename == "prod.yml"))
 								{
-									lastfile=1
+									lastfile='1'
 									break
 								}
 								
@@ -46,7 +46,7 @@ pipeline
 						}
 					}
 					echo "HELLO : ${lastfile}"
-					if(lastfile==0)
+					if(lastfile=='0')
 					{
 						//def filevalue=filename.split(/\./)
 						//echo "hai:${filevalue}"
