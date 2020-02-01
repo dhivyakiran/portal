@@ -27,6 +27,7 @@ pipeline
 					if (lastfile.indexOf('qa.yml')< 0 && lastfile.indexOf('int.yml')< 0)
 					{
 						    /*build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "dev"]], wait: true*/
+							
 							echo "................."+lastfile
 							
 					}
