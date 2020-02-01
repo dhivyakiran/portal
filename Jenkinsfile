@@ -24,7 +24,7 @@ pipeline
 				{
 					
 					
-					lastfile = return sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD').trim()
+					return sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD').trim()
 					echo "................."+lastfile
 
 					if(lastfile=='0')
