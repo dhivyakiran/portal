@@ -25,6 +25,7 @@ pipeline
 					
 				    lastfile = sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD').trim()
 					echo "................."+lastfile
+					
 					echo "aaaaaaaaaaaaaaaaa"+lastfile.indexOf('qa.yml')
 					if (lastfile.matches('qa.yml')||lastfile.matches('int.yml'))
 					{
