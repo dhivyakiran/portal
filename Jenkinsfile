@@ -24,7 +24,8 @@ pipeline
 				{
 					
 					
-					return sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD|grep -cw qa.yml').trim()
+					lastfile = sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD|grep -cw qa.yml').trim()
+					lastfile = sh(returnStdout: true, script: 'cat deploy.log').trim()
 					echo "................."+lastfile
 
 					if(lastfile=='0')
