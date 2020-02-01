@@ -22,29 +22,11 @@ pipeline
 			{
 				script 
 				{
-					def filename
-					def changeLogSets = currentBuild.changeSets
-					for (int i = 0; i < changeLogSets.size(); i++) 
-					{
-						def entries = changeLogSets[i].items
-						for (int j = 0; j < entries.length; j++) 
-						{
-							def entry = entries[j]
-							def files = new ArrayList(entry.affectedFiles)
-							for (int k = 0; k < files.size(); k++) 
-							{
-								def file = files[k]
-								echo "${file.path}"
-								filename=file.path
-								if((filename == "int.yml" || filename == "qa.yml" || filename == "uat.yml" || filename == "prod.yml"))
-								{
-									lastfile='1'
-									break
-								}
-								
-							}
-						}
-					}
+					
+					
+					lastfile = return sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD| grep -wc "qa.yml\|uat.yml\|int.yml\|prod.yml"').trim()
+					echo "................."+lastfile
+
 					if(lastfile=='0')
 					{
 						//def filevalue=filename.split(/\./)
