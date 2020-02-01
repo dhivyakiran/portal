@@ -25,7 +25,7 @@ pipeline
 					
 					sh "git diff-tree --no-commit-id --name-status -r HEAD>file"
 				    lastfile = sh(returnStdout: true, script: 'cat file').trim()
-					sh "egrep -w 'warning|error|critical'"
+					sh "egrep -w 'warning|error|critical' file"
 					echo "................."+lastfile
 
 					if(lastfile=='0')
