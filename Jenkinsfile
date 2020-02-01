@@ -24,14 +24,14 @@ pipeline
 				{
 					
 				    lastfile = sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD').trim()
-					echo "................."+lastfile
-
-					if(lastfile=='0')
+					if (lastfile.matches('qa.yml')||lastfile.matches('int.yml'))
 					{
-						//def filevalue=filename.split(/\./)
-						echo "Triggered the portal pipeline"
-						build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "dev"]], wait: true
+						    echo "................."+lastfile
+							
 					}
+					else{
+						build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "dev"]], wait: true
+						}
 				}
 			}
 		}
