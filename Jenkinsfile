@@ -24,7 +24,7 @@ pipeline
 				{
 					
 					
-					return sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD|grep -cw \"qa.yml\"').trim()
+					return sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD|grep -cw qa.yml').trim()
 					echo "................."+lastfile
 
 					if(lastfile=='0')
