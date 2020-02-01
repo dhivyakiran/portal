@@ -1,18 +1,12 @@
-node 
-{
-   deleteDir()
-   git branch: 'development', url: 'https://github.com/dhivyakiran/pipelineportal.git'
-   mydatas = readYaml file: "pipeline.yml"
-}
 pipeline  
 {   
 	agent
 	{
-		label "${mydatas.agentname}"
+		label "master"
 	}
 	environment
 	{
-		lastfile='0'
+		lastfile=0
 	}
 	stages  
 	{ 
