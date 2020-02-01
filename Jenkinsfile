@@ -16,7 +16,7 @@ pipeline
 	}
 	stages  
 	{ 
-		stage('Trigger the portal pipeline job')  
+		stage('Triggering pipeline')  
 		{
 			steps  
 			{
@@ -24,11 +24,12 @@ pipeline
 				{
 					
 				    lastfile = sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD').trim()
-					if (lastfile.indexOf('qa.yml')< 0 && lastfile.indexOf('int.yml')< 0)
+					if (lastfile.indexOf('qa.yml')< 0 && lastfile.indexOf('int.yml')< 0 && lastfile.indexOf('uat.yml')< 0 && lastfile.indexOf('prod.yml')< 0)
 					{
-						    /*build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "dev"]], wait: true*/
+						    echo "Triggered................."
+							build job: 'portal-pipeline',  parameters: [[$class: 'StringParameterValue', name: 'envname', value: "dev"]], wait: true
 							
-							echo "................."+lastfile
+							
 							
 					}
 					
